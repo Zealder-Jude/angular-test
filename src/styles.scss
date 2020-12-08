@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  background-color: #eee;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.root-card {
+  & .mat-grid-tile .mat-figure {
+    flex-direction: column;
+  }
+
+  @media (min-width: 600px) {
+    & .summary .mat-figure {
+      align-items: flex-end;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+    .mat-toolbar {
+        font-size: 12px;
+    }
+}

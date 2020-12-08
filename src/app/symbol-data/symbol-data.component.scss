@@ -1,0 +1,38 @@
+.root-card {
+  margin: 2em auto;
+  width: 90%;
+  max-width: 880px;
+}
+
+.price {
+  font-size: 3.5em;
+  font-weight: bolder;
+  line-height: initial;
+
+  @media (min-width: 600px) {
+    width: 100%;
+    text-align: right;
+  }
+
+  &::first-letter {
+    font-size: 40%;
+    vertical-align: super;
+  }
+}
+
+.price-change {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  &.positive {
+    color: green;
+  }
+  &.negative {
+    color: red;
+  }
+  & .percentage {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}

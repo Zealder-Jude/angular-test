@@ -1,0 +1,21 @@
+<mat-card class="root-card">
+    <mat-card-header>
+        <mat-card-title>{{ symbol$ | async }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-grid-list cols="4" rowHeight="300px" gutterSize="8">
+            <mat-grid-tile [colspan]="isSmallScreen ? '4' : '1'" class="summary">
+                <div class="price">{{ bidPrice$ | async | currency }}</div>
+                <div [class]="diffChange + ' price-change'">
+                    <mat-icon *ngIf="diffChange == 'negative'">arrow_drop_down</mat-icon> 
+                    <mat-icon *ngIf="diffChange == 'positive'">arrow_drop_up</mat-icon>
+                    {{ bidDiff$ | async }} 
+                    <span class="percentage">{{ diffPercent }}</span>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="isSmallScreen ? '4' : '3'">
+                <canvas id="chart" width="658" height="300"></canvas>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
